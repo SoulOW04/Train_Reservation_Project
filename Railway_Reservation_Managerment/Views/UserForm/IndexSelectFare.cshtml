@@ -1,0 +1,328 @@
+﻿@{
+    Layout = null;
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@*@RenderSection("scripts", required: false)*@
+<div class="banner">
+    <div class="content">
+        <h1>Finding Train</h1>
+        <p>Tìm Những Chuyến Tàu Đến Nơi Bạn Muốn Đến Nhất</p>
+    </div>
+</div>
+
+<center><h2>IndexSelectFromTo</h2></center>
+<center>
+    @using (Html.BeginForm("Searchs", "UserForm", "IndexSelectFare", FormMethod.Post))
+    {
+        <div class="form-box">
+            <table>
+                <tr>
+                    <th>From</th>
+                    <th>To</th>
+                    <th>Date</th>
+                    <th>Class</th>
+                    @*<th>Total Passenger</th>*@
+                </tr>
+                <tr>
+                    <td>
+                        <datalist id="fcity">
+                            @foreach (var item in ViewBag.fcity)
+                            {
+                                <option>@item</option>
+                                    @*@ViewBag.f = @item;*@
+                            }
+
+                        </datalist>
+
+                        <input type="text" name="cityFrom" autocomplete="cityFrom" class="city1" value="@ViewBag.f" placeholder="Chọn Ga Khởi Đầu" required="" list="fcity" />
+
+                    </td>
+                    <td>
+                        <datalist id="tcity">
+                            @foreach (var item in ViewBag.tcity)
+                            {
+                                <option>@item</option>
+                                    @*@ViewBag.t = @item;*@
+                            }
+
+                        </datalist>
+
+                        <input type="text" name="cityTo" autocomplete="cityTo" class="city2" placeholder="Chọn Ga Kết Thúc" required="" list="tcity" />
+                    </td>
+                    <td>
+                        <input type="date" name="date" autocomplete="date" onfocus="this.value = '';" onblur="if (this.value == '') { this.value = 'dd/mm/yyyy'}" required />
+                    </td>
+                    <td>
+                        <datalist id="clas">
+                            @foreach (var item in ViewBag.clas)
+                            {
+                                <option>@item</option>
+                                    @*@ViewBag.cl = @item;*@
+                            }
+                        </datalist>
+                        <input type="text" name="Class" autocomplete="Class" placeholder="Chọn Hạng Khoang" required="" list="clas" />
+                    </td>
+                </tr>
+            </table>
+            <div class="search">
+                <input type="submit" class="btn btn-block" value="Search Train" />
+            </div>
+        </div>
+    }
+
+</center>
+
+<div class="contact-box">
+    <center>
+        <h1>Contact Us</h1>
+    </center>
+    <p><i class="fas fa-envelope"></i> anh.lp.a1908g03@aptechlearning.edu.vn</p>
+    <p><i class="fas fa-phone-square-alt"></i> 0936495599</p>
+    <p><i class="fas fa-map-marker-alt"></i> IA20 Ciputra,Hà Nội,Việt Nam</p>
+    <p class="social"><i class="fab fa-facebook"></i></p>
+    <p class="social1"><i class="fab fa-instagram"></i></p>
+    <p>Social : </p>
+
+</div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    .banner {
+        /*background-image: linear-gradient(#141e30,#243b55);*/
+        background: #5f2c82; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #49a09d, #5f2c82); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #49a09d, #5f2c82);
+        background-size: cover;
+        background-position: center;
+        width: 108.9%;
+        height: 70vh;
+        margin-left: -128px;
+    }
+
+    .content {
+        margin-left: 255px;
+        width: 85%;
+        position: absolute;
+        top: 30%;
+        transform: translateY(-40%);
+        text-align: center;
+        color: #fff;
+    }
+
+        .content h1 {
+            font-size: 70px;
+            margin-top: 80px;
+        }
+
+        .content p {
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+        }
+
+    button {
+        width: 200px;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: 2px solid #fff;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    span {
+        background: #fff;
+        height: 100%;
+        width: 0;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+    }
+
+    button:hover span {
+        width: 100%;
+    }
+
+    button:hover {
+        border: none;
+    }
+
+    .highlight .highlight-txt {
+        padding-right: 900px;
+    }
+
+        .highlight .highlight-txt p {
+            font-size: 22px;
+            margin-left: 100px;
+        }
+
+        .highlight .highlight-txt h1 {
+            font-family: 'Times New Roman';
+            margin-left: 100px;
+        }
+
+    .highlight .highlight-txt1 {
+        /*background-color:#DEDEDE;*/
+        background-image: linear-gradient(#485563,#29323c);
+        height: 370px;
+        margin-left: -120px;
+        width: 108.9%;
+        padding-right: 100px;
+        padding-left: 1000px;
+    }
+
+        .highlight .highlight-txt1 h1 {
+            font-family: 'Times New Roman';
+            padding-top: 10px;
+            color: #fff;
+        }
+
+        .highlight .highlight-txt1 p {
+            font-size: 18px;
+            padding-top: 20px;
+            color: #fff;
+        }
+
+    .highlight .highlight-img {
+        position: absolute;
+        padding-left: 880px;
+        padding-top: 10px;
+    }
+
+    .highlight .highlight-img1 {
+        position: absolute;
+        padding-top: 20px;
+        padding-left: 100px;
+    }
+
+    .contact-box {
+        background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #414345, #232526);
+        margin-left: -6px;
+        width: 100.9%;
+        height: 300px;
+        margin-top: 120px;
+        padding-left: 50px;
+    }
+
+        .contact-box p {
+            padding-top: 20px;
+            font-size: 19px;
+            color: #fff;
+        }
+
+    .contact-header {
+        position: absolute;
+    }
+
+    .contact-box .social {
+        position: absolute;
+        padding-top: 8px;
+        margin-left: 70px;
+    }
+
+    .contact-box h1 {
+        color: #fff;
+    }
+
+    .contact-box .social1 {
+        position: absolute;
+        padding-top: 8px;
+        margin-left: 110px;
+    }
+
+    .why h1 {
+        margin-left: 30%;
+    }
+
+    .why .why-box {
+        background-image: linear-gradient(#efefbb,#d4d3dd);
+        width: 20%;
+        height: 400px;
+        margin-left: 300px;
+        position: absolute;
+        margin-top: 10px;
+    }
+
+    .why-box h3 {
+        margin-left: 20px;
+        font-size: 27px;
+    }
+
+    .why-box p {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    .why-box1 {
+        background-image: linear-gradient(#efefbb,#d4d3dd);
+        width: 20%;
+        height: 400px;
+        margin-left: 600px;
+        position: absolute;
+        margin-top: 10px;
+    }
+
+    .why-box2 {
+        background-image: linear-gradient(#efefbb,#d4d3dd);
+        width: 20%;
+        height: 400px;
+        margin-left: 900px;
+        margin-top: 10px;
+        position: absolute;
+    }
+
+    .why-box1 h3 {
+        font-size: 25px;
+        margin-left: 40px;
+    }
+
+    .why-box2 h3 {
+        font-size: 25px;
+        margin-left: 40px;
+    }
+
+    .why-box1 p {
+        font-size: 18px;
+    }
+
+    .why-box2 p {
+        font-size: 18px;
+    }
+
+    .search input:hover {
+        background: linear-gradient(#360033,#0b8793);
+        color: #fff;
+    }
+
+    .search input {
+        background: linear-gradient(to right, #ff105f,#ffad06);
+        color: #fff;
+        margin-top: 100px;
+    }
+
+    .form-box {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+        padding: 90px;
+        width: 70%;
+        margin: 30px;
+    }
+
+    .search-header {
+        font-family: 'Times New Roman';
+    }
+</style>
+
+

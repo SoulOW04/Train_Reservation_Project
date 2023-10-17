@@ -1,0 +1,382 @@
+﻿@model Railway_Reservation_Managerment.Models.Train_Booking
+
+@{
+    ViewBag.Title = "Booking";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+@*<div class="container body-content">
+        @RenderBody()
+        <hr />
+        <footer>
+            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
+        </footer>
+    </div>*@
+
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/bootstrap")
+@*@RenderSection("scripts", required: false)*@
+<div class="banner">
+    <div class="content">
+        <h1>Finding Train</h1>
+        <p>Tìm Những Chuyến Tàu Đến Nơi Bạn Muốn Đến Nhất</p>
+    </div>
+</div>
+@ViewBag.mss
+@using (Html.BeginForm("Booking", "Train_Booking"))
+{
+    @Html.AntiForgeryToken()
+    <center>
+        <div class="form-horizontal">
+            <h2>Your Ticket Order</h2>
+            <hr />
+            <br />
+            <table class="form-box" border="1">
+                <thead>
+                    <tr>
+                        <th>Train Name</th>
+                        <th>From</th>
+                        <th>To</th>
+                        <th>Date</th>
+                        <th>Class</th>
+                        <th>Price</th>
+                    </tr>
+                </thead>
+                <tr>
+                    @*<td>
+
+                            @{
+                                int ti = int.Parse(@item.Train_Id.ToString());
+                                var dd = new Railway_Reservation_Managerment.Models.Model_Context();
+                                var pname = dd.Train_Details.Where(t => t.Train_Id == ti).FirstOrDefault();
+                                @pname.Train_name
+                            }
+
+                        </td>*@
+                    <td>@Session["Name"]</td>
+                    <td>@Session["From"]</td>
+                    <td>@Session["To"]</td>
+                    <td>@Session["DepartureDate"]</td>
+                    <td>@Session["Class"]</td>
+                    <td>@Session["TotalPrice"]</td>
+                </tr>
+            </table>
+
+            <h2>Train_Booking</h2>
+            
+            <center>
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <div class="submit-btn">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="submit" value="ĐẶT VÉ" class="btn btn-default" />
+                        @*@{  @Lid = Session["PassengerID"], @Fid = Session["FareId"] }*@
+
+                    </div>
+                </div>
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.Name, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label>Full Name:</label>
+                    <div class="col-md-10">
+                        @Html.EditorFor(model => model.Name, new { htmlAttributes = new { @class = "form-control" } })
+                        @Html.ValidationMessageFor(model => model.Name, "", new { @class = "text-danger" })
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.Gender, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label>Gender:</label>
+                    <div class="col-md-10">
+                        @*@Html.EditorFor(model => model.Gender, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Gender, "", new { @class = "text-danger" })*@
+                        <select class="form-control" name="Gender">
+                            <option>Male (Nam)</option>
+                            <option>Female (Nữ)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    @*@Html.LabelFor(model => model.PaymentType, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                    <label>Payment Type</label>
+                    <div class="col-md-10">
+                        <select class="form-control" name="PaymentType">
+                            <option>Ticket Shipping</option>
+                            <option>Online Banking</option>
+                            <option>Pay at the train station</option>
+                        </select>
+                        @*@Html.ValidationMessageFor(model => model.Paytype, "", new { @class = "text-danger" })
+                            @Html.EditorFor(model => model.Paytype, new { htmlAttributes = new { @class = "form-control" } })*@
+                    </div>
+                </div>
+                @* } *@
+            </center>
+
+
+            <div>
+                @Html.ActionLink("Back to List", "Index")
+            </div>
+        </div>
+    </center>
+}
+
+
+
+<div class="contact-box">
+    <center>
+        <h1>Contact Us</h1>
+    </center>
+    <p><i class="fas fa-envelope"></i> anh.lp.a1908g03@aptechlearning.edu.vn</p>
+    <p><i class="fas fa-phone-square-alt"></i> 0936495599</p>
+    <p><i class="fas fa-map-marker-alt"></i> IA20 Ciputra,Hà Nội,Việt Nam</p>
+    <p class="social"><i class="fab fa-facebook"></i></p>
+    <p class="social1"><i class="fab fa-instagram"></i></p>
+    <p>Social : </p>
+
+</div>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        font-family: sans-serif;
+    }
+
+    .banner {
+        /*background-image: linear-gradient(#141e30,#243b55);*/
+        background: #5f2c82; /* fallback for old browsers */
+        background: -webkit-linear-gradient(to right, #49a09d, #5f2c82); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #49a09d, #5f2c82);
+        background-size: cover;
+        background-position: center;
+        width: 108.9%;
+        height: 70vh;
+        margin-left: -128px;
+    }
+
+    .content {
+        margin-left: 255px;
+        width: 85%;
+        position: absolute;
+        top: 30%;
+        transform: translateY(-40%);
+        text-align: center;
+        color: #fff;
+    }
+
+        .content h1 {
+            font-size: 70px;
+            margin-top: 80px;
+        }
+
+        .content p {
+            margin: 20px auto;
+            font-weight: 100;
+            line-height: 25px;
+        }
+
+    button {
+        width: 200px;
+        padding: 15px 0;
+        text-align: center;
+        margin: 20px 10px;
+        border-radius: 25px;
+        font-weight: bold;
+        border: 2px solid #fff;
+        background: transparent;
+        color: #fff;
+        cursor: pointer;
+        position: relative;
+        overflow: hidden;
+    }
+
+    span {
+        background: #fff;
+        height: 100%;
+        width: 0;
+        border-radius: 25px;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        z-index: -1;
+        transition: 0.5s;
+    }
+
+    button:hover span {
+        width: 100%;
+    }
+
+    button:hover {
+        border: none;
+    }
+
+    .highlight .highlight-txt {
+        padding-right: 900px;
+    }
+
+        .highlight .highlight-txt p {
+            font-size: 22px;
+            margin-left: 100px;
+        }
+
+        .highlight .highlight-txt h1 {
+            font-family: 'Times New Roman';
+            margin-left: 100px;
+        }
+
+    .highlight .highlight-txt1 {
+        /*background-color:#DEDEDE;*/
+        background-image: linear-gradient(#485563,#29323c);
+        height: 370px;
+        margin-left: -120px;
+        width: 108.9%;
+        padding-right: 100px;
+        padding-left: 1000px;
+    }
+
+        .highlight .highlight-txt1 h1 {
+            font-family: 'Times New Roman';
+            padding-top: 10px;
+            color: #fff;
+        }
+
+        .highlight .highlight-txt1 p {
+            font-size: 18px;
+            padding-top: 20px;
+            color: #fff;
+        }
+
+    .highlight .highlight-img {
+        position: absolute;
+        padding-left: 880px;
+        padding-top: 10px;
+    }
+
+    .highlight .highlight-img1 {
+        position: absolute;
+        padding-top: 20px;
+        padding-left: 100px;
+    }
+
+    .contact-box {
+        background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #414345, #232526);
+        margin-left: -6px;
+        width: 100.9%;
+        height: 300px;
+        margin-top: 70px;
+        padding-left: 50px;
+    }
+
+        .contact-box p {
+            padding-top: 20px;
+            font-size: 19px;
+            color: #fff;
+        }
+
+    .contact-header {
+        position: absolute;
+    }
+
+    .contact-box .social {
+        position: absolute;
+        padding-top: 8px;
+        margin-left: 70px;
+    }
+
+    .contact-box h1 {
+        color: #fff;
+    }
+
+    .contact-box .social1 {
+        position: absolute;
+        padding-top: 8px;
+        margin-left: 110px;
+    }
+
+    .why h1 {
+        margin-left: 30%;
+    }
+
+    .why .why-box {
+        background-image: linear-gradient(#efefbb,#d4d3dd);
+        width: 20%;
+        height: 400px;
+        margin-left: 300px;
+        position: absolute;
+        margin-top: 10px;
+    }
+
+    .why-box h3 {
+        margin-left: 20px;
+        font-size: 27px;
+    }
+
+    .why-box p {
+        font-size: 20px;
+        margin-left: 5px;
+    }
+
+    .why-box1 {
+        background-image: linear-gradient(#efefbb,#d4d3dd);
+        width: 20%;
+        height: 400px;
+        margin-left: 600px;
+        position: absolute;
+        margin-top: 10px;
+    }
+
+    .why-box2 {
+        background-image: linear-gradient(#efefbb,#d4d3dd);
+        width: 20%;
+        height: 400px;
+        margin-left: 900px;
+        margin-top: 10px;
+        position: absolute;
+    }
+
+    .why-box1 h3 {
+        font-size: 25px;
+        margin-left: 40px;
+    }
+
+    .why-box2 h3 {
+        font-size: 25px;
+        margin-left: 40px;
+    }
+
+    .why-box1 p {
+        font-size: 18px;
+    }
+
+    .why-box2 p {
+        font-size: 18px;
+    }
+
+    .form-horizontal {
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+        width: 90%;
+        padding-bottom: 100px;
+    }
+
+    .form-group label {
+        position: absolute;
+        margin-left: -450px;
+        font-size: 18px;
+    }
+
+    .form-horizontal h2 {
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .submit-btn {
+        position: absolute;
+        margin-left: 60%;
+        margin-top: 2%;
+    }
+
+        .submit-btn input {
+            font-size: 15px;
+        }
+</style>
+
+
+

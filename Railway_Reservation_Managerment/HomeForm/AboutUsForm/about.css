@@ -1,0 +1,168 @@
+﻿*{
+    margin: 0;
+    padding: 0;
+    font-family:sans-serif;
+}
+.banner{
+    /*background-image: linear-gradient(#141e30,#243b55);*/
+    background-image: linear-gradient(#70e1f5,#ffd194);
+    background-size:cover;
+    background-position:center;
+    width: 121.8%;
+    height: 70vh;
+    margin-left:-128px
+}
+.content{
+    margin-left: 105px;
+    width: 85%;
+    position: absolute;
+    top: 30%;
+    transform: translateY(-40%);
+    text-align:center;
+    color: #fff;
+}
+.content h1{
+    font-size: 70px;
+    margin-top: 80px;
+    font-family:'Times New Roman';
+}
+.content p{
+    margin: 20px auto;
+    font-weight: 100;
+    line-height: 25px;
+    font-size:20px;
+}
+.highlight p{
+    font-size:18px;
+}
+.highlight h1{
+    font-family:'Times New Roman';
+    
+}
+.flip-box {
+  background-color: transparent;
+  width: 300px;
+  height: 200px;
+  border: 1px solid #f1f1f1;
+  perspective: 1000px; /* Remove this if you don't want the 3D effect */
+  margin-left: 25%;
+}
+
+/* This container is needed to position the front and back side */
+.flip-box-inner {
+  position: relative;
+  width: 200%;
+  height: 150%;
+  text-align: center;
+  transition: transform 0.8s;
+  transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-box:hover .flip-box-inner {
+  transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-box-front, .flip-box-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden; /* Safari */
+  backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-box-front {
+  background:linear-gradient(#232526,#414345);
+  color: black;
+}
+
+/* Style the back side */
+.flip-box-back {
+  background:linear-gradient(#232526,#414345);
+  color: white;
+  transform: rotateY(180deg);
+}
+.highlight2-service{
+    
+    padding-left:820px;
+    background-image: linear-gradient(#141e30,#243b55);
+    margin-left:-120px;
+    width:120.9%;
+    height: 520px;
+}
+.highlight-img img{
+    width: 40%;
+    height: 480px;
+    position:absolute;
+    margin:50px;
+    margin-left:-5px
+}
+.highlight2-journeys{
+   padding-right: 700px;
+   padding-top:20px;
+
+}
+.highlight-img1 img{
+    width: 40%;
+    position:absolute;
+    margin-left: 700px;
+    margin-top : 100px
+}
+.highlight2-header{
+    position:absolute;
+    padding-top:100px;
+    padding-left:250px;
+   
+}
+.highlight2{
+    padding-top:200px
+}
+.highlight2-header h1{
+    font-family:'Times New Roman';
+}
+.highlight2-journeys h1{
+    font-family:'Times New Roman';
+}
+.highlight2-service h1{
+    font-family:'Times New Roman';
+    color: #fff;
+    
+}
+.highlight2-service p{
+    font-size: 18px;
+    padding-top:12px;
+    color: #fff;
+}
+.highlight2-journeys p{
+    font-size:18px;
+}
+.contact-box{
+    background-image: linear-gradient(#70e1f5,#ffd194);
+    margin-left:-120px;
+    width:121.1%;
+    height: 300px;
+    margin-top:30px;
+}
+.contact-box p{
+    
+    padding-top:20px;
+    font-size:19px;
+    color: #009688;
+}
+.contact-header{
+    position: absolute;
+
+}
+.contact-box .social{
+    position:absolute;
+    padding-top:20px;
+    margin-left: 70px;
+}
+.contact-box .social1{
+    position:absolute;
+    padding-top:20px;
+    margin-left: 110px;
+
+}

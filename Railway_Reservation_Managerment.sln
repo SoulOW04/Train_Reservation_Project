@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.28307.2092
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Railway_Reservation_Managerment", "Railway_Reservation_Managerment\Railway_Reservation_Managerment.csproj", "{435CF085-00D2-42E3-A40F-36C4B895B80C}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Tarot_Project_minh", "C:\Tarot_Project_minh\Tarot_Project_minh\Tarot_Project_minh.csproj", "{3C9770E5-96B6-4973-9EFA-CB5A49D1FD37}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{435CF085-00D2-42E3-A40F-36C4B895B80C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{435CF085-00D2-42E3-A40F-36C4B895B80C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{435CF085-00D2-42E3-A40F-36C4B895B80C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{435CF085-00D2-42E3-A40F-36C4B895B80C}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C9770E5-96B6-4973-9EFA-CB5A49D1FD37}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C9770E5-96B6-4973-9EFA-CB5A49D1FD37}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C9770E5-96B6-4973-9EFA-CB5A49D1FD37}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C9770E5-96B6-4973-9EFA-CB5A49D1FD37}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {354660DC-C019-49E7-B133-5F72ECFB7812}
+	EndGlobalSection
+EndGlobal

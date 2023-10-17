@@ -1,0 +1,126 @@
+﻿@model IEnumerable<Railway_Reservation_Managerment.Models.Train_Booking>
+
+@*<p>
+    @Html.ActionLink("Create New", "Create")
+</p>*@
+<div class="head">
+    <img src="~/IMG/ticket.svg"/>
+</div>
+<table class="table">
+    <tr>
+        <th>
+            <label>Depature Date</label>
+        </th>
+        <th>
+            <label>From City</label>
+        </th>
+        <th>
+            <label>To City</label>
+        </th>
+        <th>
+            <label>Price</label>
+        </th>
+        <th>
+            <label>Full Name</label>
+        </th>
+        <th>
+            <label>Gender</label>
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fare_Detail.Depature_Date)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fare_Detail.From_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fare_Detail.To_City)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Fare_Detail.Price)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Gender)
+        </td>
+        <td>
+            
+            @Html.ActionLink("Details", "Details", new { id=item.TrainBooking_Id }) |
+            @Html.ActionLink("Cancellation", "Cancellation", new { id=item.TrainBooking_Id })
+        </td>
+    </tr>
+
+}
+
+</table>
+<div class="contact-img">
+    <img src="~/IMG/contact.svg"/>
+</div>
+<div class="contact-box">
+    <center>
+        <h1>Contact Us</h1>
+    </center>
+    <p><i class="fas fa-envelope"></i> anh.lp.a1908g03@aptechlearning.edu.vn</p>
+    <p><i class="fas fa-phone-square-alt"></i> 0936495599</p>
+    <p><i class="fas fa-map-marker-alt"></i> IA20 Ciputra,Hà Nội,Việt Nam</p>
+    <p class="social"><i class="fab fa-facebook"></i></p>
+    <p class="social1"><i class="fab fa-instagram"></i></p>
+    <p>Social : </p>
+
+</div>
+<style>
+            .contact-box {
+            background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin-left: -6px;
+            width: 100.9%;
+            height: 320px;
+            margin-top: 450px;
+            padding-left: 50px;
+        }
+
+            .contact-box p {
+                padding-top: 20px;
+                font-size: 19px;
+                color: #fff;
+            }
+
+        .contact-header {
+            position: absolute;
+        }
+
+        .contact-box .social {
+            position: absolute;
+            padding-top: 8px;
+            margin-left: 70px;
+        }
+
+        .contact-box h1 {
+            color: #fff;
+            font-family: 'Times New Roman', Times, serif;
+        }
+
+        .contact-box .social1 {
+            position: absolute;
+            padding-top: 8px;
+            margin-left: 110px;
+        }
+        .contact-img img {
+            width:40%;
+            height: 40%;
+            position:absolute;
+            margin-top:450px;
+            margin-left: 850px;
+        }
+        .head img{
+            width: 10%;
+            height:10%;
+            margin-left:45%;
+        }
+
+</style>

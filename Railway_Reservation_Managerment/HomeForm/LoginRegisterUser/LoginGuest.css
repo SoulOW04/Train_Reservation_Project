@@ -1,0 +1,84 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+*{
+  margin: 0;
+  padding: 0;
+}
+.hero{
+    height: 100%;
+    width:100%;
+    background:linear-gradient(#49a09d, #5f2c82);
+    background-position:center;
+    background-size:cover;
+    position:absolute;
+    margin-left:0px;
+}
+.form-box{
+    width: 380px;
+    height:480px;
+    position:relative;
+    margin: 6% auto;
+    background: #fff;
+    padding: 5px;
+    overflow:hidden;
+    box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+    border-radius:3px;
+    overflow:hidden;
+    margin-left: 40%;
+
+}
+/*.input-group{
+    top: 180px;
+    position:absolute;
+    width:280px;
+    transition: .5s;
+}
+.input-field{
+    width:100%;
+    padding: 10px 0;
+    margin: 5px 0;
+    border-left: 0;
+    border-top:0;
+    border-right:0;
+    border-bottom:1px solid #999;
+    outline: none;
+    background:transparent;
+}*/
+.submit-btn{
+    width: 85%;
+    padding:10px 30px;
+    cursor: pointer;
+    display:block;
+    margin:auto;
+    background:linear-gradient(to right, #ff105f,#ffad06);
+    border:0;
+    outline: none;
+    border-radius: 30px;
+    margin-top:10px;
+    margin-left:-25px;
+    margin-bottom:30px;
+}
+.form-group label{
+    position:absolute;
+    top: -35px;
+    left: 30px;
+    padding: 10px 0;
+    font-size: 19px;
+    color: black;
+    pointer-events:none;
+    transition: 0.5s ease;
+}
+.form-group input{
+    width: 90%;
+    padding: 10px 0;
+    font-size: 16px;
+    color: black;
+    margin: 30px;
+    border:none;
+    border-bottom: 1px solid #000000;
+    outline:none;
+    background: transparent;
+    margin-top: 60px;
+}
+.form-group{
+    position:relative;
+}

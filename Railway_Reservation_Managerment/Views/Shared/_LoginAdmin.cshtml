@@ -1,0 +1,22 @@
+﻿<!DOCTYPE html>
+
+@using Railway_Reservation_Managerment.Models
+@model LoginViewModel
+
+@section scripts{
+    @Scripts.Render("~/bundles/jqueryval");    
+}
+
+@{
+    ViewBag.Title = "Login";
+}
+<html>
+<head>
+    <link rel="stylesheet" href="@Url.Content("~/LoginAdm/login.css")">
+</head>
+<body>
+    <div>
+        @RenderBody()
+    </div>
+</body>
+</html>

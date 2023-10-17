@@ -1,0 +1,149 @@
+﻿@model Railway_Reservation_Managerment.Models.Train_Booking
+<div class="head">
+    <img src="~/IMG/ticket.svg" />
+</div>
+
+<div class="cancel">
+    <h3>Are you sure you want to Cancel this ticket?</h3>
+    <h4>Train_Booking</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Fare_Detail.Depature_Date)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fare_Detail.Depature_Date)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fare_Detail.From_City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fare_Detail.From_City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Fare_Detail.To_City)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Fare_Detail.To_City)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Passenger.Login_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Passenger.Login_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Gender)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Gender)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Cancel" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>
+<div class="contact-img">
+    <img src="~/IMG/contact.svg" />
+</div>
+<div class="contact-box">
+    <center>
+        <h1>Contact Us</h1>
+    </center>
+    <p><i class="fas fa-envelope"></i> anh.lp.a1908g03@aptechlearning.edu.vn</p>
+    <p><i class="fas fa-phone-square-alt"></i> 0936495599</p>
+    <p><i class="fas fa-map-marker-alt"></i> IA20 Ciputra,Hà Nội,Việt Nam</p>
+    <p class="social"><i class="fab fa-facebook"></i></p>
+    <p class="social1"><i class="fab fa-instagram"></i></p>
+    <p>Social : </p>
+
+</div>
+<style>
+    .contact-box {
+        background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+        background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+        margin-left: -6px;
+        width: 100.9%;
+        height: 320px;
+        margin-top: 450px;
+        padding-left: 50px;
+    }
+
+        .contact-box p {
+            padding-top: 20px;
+            font-size: 19px;
+            color: #fff;
+        }
+
+    .contact-header {
+        position: absolute;
+    }
+
+    .contact-box .social {
+        position: absolute;
+        padding-top: 8px;
+        margin-left: 70px;
+    }
+
+    .contact-box h1 {
+        color: #fff;
+        font-family: 'Times New Roman', Times, serif;
+    }
+
+    .contact-box .social1 {
+        position: absolute;
+        padding-top: 8px;
+        margin-left: 110px;
+    }
+
+    .contact-img img {
+        width: 40%;
+        height: 40%;
+        position: absolute;
+        margin-top: 450px;
+        margin-left: 850px;
+    }
+
+    .head img {
+        width: 10%;
+        height: 10%;
+        margin-left: 45%;
+    }
+    .cancel{
+          
+        box-shadow: 0 14px 28px rgba(0,0,0,0.25),0 10px 10px rgba(0,0,0,0.22);
+        width:90%;
+        margin-left:6%;
+    
+    }
+    .form-actions input:hover{
+        color: #fff;
+        background:linear-gradient(#8E0E00,#1F1C18);
+    }
+</style>
+
+

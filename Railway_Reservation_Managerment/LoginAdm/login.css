@@ -1,0 +1,86 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap');
+html{
+    height: 100%;
+    font-family: 'Poppins',sans-serif;
+}
+body{
+    margin: 0%;
+    padding: 0%;
+    /*background:linear-gradient(#06beb6,#48b1bf)*/
+    background-image: url(https://wallpapercave.com/wp/wp4649492.jpg)
+}
+.login-box{
+    position:absolute; /* Dùng để thiết lập vị trí của một phần tử*/
+    top: 15%;
+    left: 35%;
+    padding: 100px;
+    box-sizing:border-box;
+    box-shadow: 0 15px 25px #387DB9;
+    border-radius: 10px;
+    background:linear-gradient(#2C3E50,#FD746C);
+}
+.login-box h2{
+    margin: 0 0 30px;
+    padding: 0;
+    color: #fff;
+    text-align: center;
+}
+.login-box .user-box{
+    position: relative; /*Dùng để thiết lập một phần tử sử dụng các thuộc tính position*/
+}
+.login-box .user-box input{
+    width: 90%;
+    padding: 10px 0;
+    font-size: 20px;
+    color: black;
+    margin: 30px;
+    border:none;
+    border-bottom: 1px solid #fff;
+    outline:none;
+    background: transparent; /*cho background cua input gọn lại*/
+}
+.login-box .user-box label{
+    position:absolute;
+    top: 40px;
+    left: 30px;
+    padding: 10px 0;
+    font-size: 16px;
+    color: #fff;
+    pointer-events:none;
+    transition: 0.5s ease;
+}
+.login-box .user-box input:focus ~ label,
+.login-box .user-box input:valid ~ label{
+    top: 0px;
+    left: 30px;
+    color: aqua;
+    font-size: 14px;
+}
+.login-box .login-btn{
+    position:relative;
+    display:inline-block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+    text-transform: uppercase;
+    overflow:hidden;
+    transition: 0.5s ease;
+    margin-top:40px;
+    margin-left:20px;
+    letter-spacing:4px;
+    background: transparent;
+    border:none;
+}
+.login-box .login-btn:hover{
+    background: #9A42DC;
+    color: #fff;
+    border-radius:5px;
+    box-shadow: 0 0 5px violet,
+                0 0 25px violet,
+                0 0 50px violet,
+                0 0 100px violet;
+}
+.login-box a span{
+    position:absolute;
+    display:block;
+}

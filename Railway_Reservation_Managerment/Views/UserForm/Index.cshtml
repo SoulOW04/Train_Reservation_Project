@@ -1,0 +1,300 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    //Layout = "~/Views/Shared/_HomePage.cshtml";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+@{
+    ViewBag.Title = "Home Page";
+}
+@*@RenderBody()*@
+
+<html>
+<head>
+    <script src="https://kit.fontawesome.com/8665d64aee.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="banner">
+        <div class="content">
+            <h1>The Viet</h1>
+            <p>Mua Vé The Viet Để Có Những Chuyến Tàu Thoải Mái Và An Toàn Nhất</p>
+            <div>
+                <button type="button" style="color:white"><span></span>@Html.ActionLink("ABOUT US", "IndexAboutUs", "UserForm")</button>
+                <button type="button"><span></span>@Html.ActionLink("Book Train Now", "IndexSelectFare", "UserForm")</button>
+            </div>
+        </div>
+    </div>
+    <div class="highlight">
+        <div class="highlight-img">
+            <img src="~/HomeForm/10.png" />
+        </div>
+        <div class="highlight-txt">
+            <h1>HÃY BƯỚC LÊN TÀU THE VIET</h1>
+            <p>Tham gia vào một chuyến du hành sang trọng bằng đường sắt qua những cảnh quan xanh mướt và đường bờ biển ngoạn mục của Việt Nam trên tàu The Viet. Hãy đặt vé tàu tại Việt Nam để tận hưởng sự thi vị của một chuyến du hành tuyệt vời bằng tuyến đường sắt kết nối nét đẹp cổ kính và bờ biển lấp lánh nắng vàng. The Viet kết hợp sự thoải mái cổ điển, cảnh quan ngoạn mục và những bữa ăn ngon miệng để mang lại cho bạn cảm hứng, sự sảng khoái và sẵn sàng cho điểm đến tiếp theo của bạn.</p>
+
+        </div>
+        <div class="highlight-img1">
+            <img src="~/HomeForm/11.png" />
+        </div>
+
+        <div class="highlight-txt1">
+            <h1>NHỮNG DỊCH VỤ CƠ BẢN</h1>
+            <p><i class="fas fa-wifi"></i> Wifi Miễn Phí</p>
+            <p><i class="fas fa-plug"></i>Ổ Điện Tại Chỗ</p>
+            <p><i class="fas fa-utensils"></i>Phục Vụ Đồ Ăn</p>
+            <p><i class="fas fa-user-tie"></i>Đội Ngũ Nhân Viên Chu Đáo</p>
+        </div>
+    </div>
+    <div class="why">
+        <h1>Tại Sao Nên Đặt Tàu Của The Viet</h1>
+        <div class="why-box">
+
+            <h3><i class="fas fa-ticket-alt"></i> Nhận Vé The Viet</h3>
+            <p>Với tính năng dự đoán và thay thế chuyến tàu tương tự của chúng tôi, hãy tăng cơ hội nhận được vé tàu The Viet xác nhận.</p>
+        </div>
+        <div class="why-box1">
+            <h3><i class="fas fa-window-close"></i>Hủy ngay lập tức</h3>
+            <p>Nhận tiền hoàn lại ngay lập tức và đặt vé IRCTC tiếp theo của bạn một cách dễ dàng.</p>
+        </div>
+        <div class="why-box2">
+            <h3><i class="fas fa-map-marker-alt"></i>Theo dõi trạng thái</h3>
+            <p>Trạng thái tàu & thông báo vé tàu The Viet của bạn</p>
+        </div>
+    </div>
+    <div class="contact-box">
+        <center>
+            <h1>Contact Us</h1>
+        </center>
+        <p><i class="fas fa-envelope"></i> anh.lp.a1908g03@aptechlearning.edu.vn</p>
+        <p><i class="fas fa-phone-square-alt"></i> 0936495599</p>
+        <p><i class="fas fa-map-marker-alt"></i> IA20 Ciputra,Hà Nội,Việt Nam</p>
+        <p class="social"><i class="fab fa-facebook"></i></p>
+        <p class="social1"><i class="fab fa-instagram"></i></p>
+        <p>Social : </p>
+
+    </div>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+
+        .banner {
+            /*background-image: linear-gradient(#141e30,#243b55);*/
+            background: #5f2c82; /* fallback for old browsers */
+            background: -webkit-linear-gradient(to right, #49a09d, #5f2c82); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #49a09d, #5f2c82);
+            background-size: cover;
+            background-position: center;
+            width: 108.9%;
+            height: 70vh;
+            margin-left: -128px;
+        }
+
+        .content {
+            margin-left: 255px;
+            width: 85%;
+            position: absolute;
+            top: 30%;
+            transform: translateY(-40%);
+            text-align: center;
+            color: #fff;
+        }
+
+            .content h1 {
+                font-size: 70px;
+                margin-top: 80px;
+            }
+
+            .content p {
+                margin: 20px auto;
+                font-weight: 100;
+                line-height: 25px;
+            }
+
+        button {
+            width: 200px;
+            padding: 15px 0;
+            text-align: center;
+            margin: 20px 10px;
+            border-radius: 25px;
+            font-weight: bold;
+            border: 2px solid #fff;
+            background: transparent;
+            color: #fff;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+        }
+
+        span {
+            background: #fff;
+            height: 100%;
+            width: 0;
+            border-radius: 25px;
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            z-index: -1;
+            transition: 0.5s;
+        }
+
+        button:hover span {
+            width: 100%;
+        }
+
+        button:hover {
+            border: none;
+        }
+
+        .highlight .highlight-txt {
+            padding-right: 900px;
+        }
+
+            .highlight .highlight-txt p {
+                font-size: 22px;
+                margin-left: 100px;
+            }
+
+            .highlight .highlight-txt h1 {
+                font-family: 'Times New Roman';
+                margin-left: 100px;
+            }
+
+        .highlight .highlight-txt1 {
+            /*background-color:#DEDEDE;*/
+            background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            height: 370px;
+            margin-left: -120px;
+            width: 108.9%;
+            padding-right: 100px;
+            padding-left: 1000px;
+        }
+
+            .highlight .highlight-txt1 h1 {
+                font-family: 'Times New Roman';
+                padding-top: 10px;
+                color: #fff;
+            }
+
+            .highlight .highlight-txt1 p {
+                font-size: 18px;
+                padding-top: 20px;
+                color: #fff;
+            }
+
+        .highlight .highlight-img {
+            position: absolute;
+            padding-left: 880px;
+            padding-top: 10px;
+        }
+
+        .highlight .highlight-img1 {
+            position: absolute;
+            padding-top: 20px;
+            padding-left: 100px;
+        }
+
+        .contact-box {
+            background: -webkit-linear-gradient(to right, #414345, #232526); /* Chrome 10-25, Safari 5.1-6 */
+            background: linear-gradient(to right, #414345, #232526); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+            margin-left: -6px;
+            width: 100.9%;
+            height: 300px;
+            margin-top: 450px;
+            padding-left: 50px;
+        }
+
+            .contact-box p {
+                padding-top: 20px;
+                font-size: 19px;
+                color: #fff;
+            }
+
+        .contact-header {
+            position: absolute;
+        }
+
+        .contact-box .social {
+            position: absolute;
+            padding-top: 8px;
+            margin-left: 70px;
+        }
+
+        .contact-box h1 {
+            color: #fff;
+        }
+
+        .contact-box .social1 {
+            position: absolute;
+            padding-top: 8px;
+            margin-left: 110px;
+        }
+
+        .why h1 {
+            margin-left: 30%;
+        }
+
+        .why .why-box {
+            background-image: linear-gradient(#efefbb,#d4d3dd);
+            width: 20%;
+            height: 400px;
+            margin-left: 300px;
+            position: absolute;
+            margin-top: 10px;
+        }
+
+        .why-box h3 {
+            margin-left: 20px;
+            font-size: 27px;
+        }
+
+        .why-box p {
+            font-size: 20px;
+            margin-left: 5px;
+        }
+
+        .why-box1 {
+            background-image: linear-gradient(#efefbb,#d4d3dd);
+            width: 20%;
+            height: 400px;
+            margin-left: 600px;
+            position: absolute;
+            margin-top: 10px;
+        }
+
+        .why-box2 {
+            background-image: linear-gradient(#efefbb,#d4d3dd);
+            width: 20%;
+            height: 400px;
+            margin-left: 900px;
+            margin-top: 10px;
+            position: absolute;
+        }
+
+        .why-box1 h3 {
+            font-size: 25px;
+            margin-left: 40px;
+        }
+
+        .why-box2 h3 {
+            font-size: 25px;
+            margin-left: 40px;
+        }
+
+        .why-box1 p {
+            font-size: 18px;
+        }
+
+        .why-box2 p {
+            font-size: 18px;
+        }
+    </style>
+</body>
+</html>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    @*@RenderSection("scripts", required: false)*@

@@ -1,0 +1,133 @@
+﻿@model Railway_Reservation_Managerment.Models.Passenger
+
+@{
+//ViewBag.Title = "Login";
+//Layout = "~/HomeForm/LoginRegisterUser/LoginGuest.cshtml";
+}
+<html>
+<head>
+    <link rel="stylesheet" href="@Url.Content("~/HomeForm/LoginRegisterUser/LoginGuest.css")">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+    @using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        
+        <div class="hero">
+            <div class="form-box">
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                <center style="color:red; font-size:larger">@ViewBag.msg</center>
+                <form id="login" class="input-group">
+                    <center>
+                        <h2>Login</h2>
+                    </center>
+                    <hr>
+                    <div class="form-group">
+                        
+                        @Html.EditorFor(model => model.Login_Name, new { htmlAttributes = new { @class = "form-control" } })
+                        <label>Account</label>
+                        @Html.ValidationMessageFor(model => model.Login_Name, "", new { @class = "text-danger" })
+                    </div>
+                    <div class="form-group">
+                       
+                        @Html.EditorFor(model => model.Login_Password, new { htmlAttributes = new { @class = "form-control" } })
+                        <label>Password</label>
+                        @Html.ValidationMessageFor(model => model.Login_Password, "", new { @class = "text-danger" })
+                    </div>
+                   
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Login" class="submit-btn" />
+                        </div>
+                    <div class="register-conect">
+                        <center>
+                        <p style="color: black; font-weight: bold ">If dont have account create here <a href="@Url.Action("Register","Passengers") " style="color: #ffc107; margin-left:20px; font-weight:bold">Register</a></p>
+                        </center>
+                    
+                    </div>
+                    <center>
+                        <div>
+                            @Html.ActionLink("Forgot Password?", "ForgotPassword", "Passengers")
+                        </div>
+                    </center>
+                </form>
+            </div>
+        </div>
+    }
+    <style>
+       .register-conect p{
+           font-family: 'Times New Roman', Times, serif;
+           font-size:17px;
+           margin-top:20px
+       }
+    </style>
+
+    
+        
+</body>
+
+</html>
+
+@*@using (Html.BeginForm())
+    {
+        @Html.AntiForgeryToken()
+        @ViewBag.msg
+        <div class="hero">
+            <hr />
+            <div class="form-box">
+                <form id="login" class="input-group">
+                    <h4>Login</h4>
+
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Login_Name, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Login_Name, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Login_Name, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        @Html.LabelFor(model => model.Login_Password, htmlAttributes: new { @class = "control-label col-md-2" })
+                        <div class="col-md-10">
+                            @Html.EditorFor(model => model.Login_Password, new { htmlAttributes = new { @class = "form-control" } })
+                            @Html.ValidationMessageFor(model => model.Login_Password, "", new { @class = "text-danger" })
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <div class="col-md-offset-2 col-md-10">
+                            <input type="submit" value="Login" class="btn btn-default" />
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        @Html.ActionLink("Back to List", "Index")
+                        <p style="color: black; font-weight: bold ">If dont have account create here <a href="@Url.Action("Register","Passengers") " style="color: #ffc107; margin-left:20px; font-weight:bold">Register</a></p>
+                    </div>
+                </form>*@
+@*<div class="form-group">
+        @Html.LabelFor(model => model.Email, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Email, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Email, "", new { @class = "text-danger" })
+        </div>
+    </div>
+
+    <div class="form-group">
+        @Html.LabelFor(model => model.Phone, htmlAttributes: new { @class = "control-label col-md-2" })
+        <div class="col-md-10">
+            @Html.EditorFor(model => model.Phone, new { htmlAttributes = new { @class = "form-control" } })
+            @Html.ValidationMessageFor(model => model.Phone, "", new { @class = "text-danger" })
+        </div>
+    </div>*@
+
+
+@*</div>
+        </div>
+    }*@
+
+
+@*<div>
+        @Html.ActionLink("Back to List", "Index")
+    </div>*@

@@ -1,0 +1,40 @@
+﻿
+@{
+    ViewBag.Title = "AdmLogin";
+    Layout = "~/Views/Shared/_LoginAdmin.cshtml";
+}
+
+<html>
+<head>
+    <link rel="stylesheet" href="@Url.Content("~/LoginAdm/login.css")">
+</head>
+
+<body>
+    <h3 style="text-align: center ; color: white">
+        @ViewBag.m
+    </h3>
+    <div class="login-box">
+        <h2>Login</h2>
+        <form action="#" method="post">
+            <div class="user-box">
+
+                <input type="text" name="AdmUserName" id="" />
+                <label>Username</label>
+            </div>
+            <div class="user-box">
+                <input type="password" name="AdmPassword" id="" />
+                <label>Password</label>
+            </div>
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+            <center>
+                <input type="submit" class="login-btn" value="Login">
+            </center>
+
+        </form>
+    </div>
+</body>
+</html>
+
